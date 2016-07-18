@@ -1,0 +1,9 @@
+CREATE TABLE count(
+countid integer PRIMARY KEY,
+pushups integer not null,
+abs integer not null,
+back integer not null,
+squat integer not null,
+barbie integer not null, 
+total integer not null
+);

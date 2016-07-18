@@ -1,0 +1,54 @@
+<%# encoding: utf-8 %>
+
+<%
+require 'cgi'
+cgi = CGI.new
+print cgi.header("text/html; charset=utf-8")
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>新規登録</title>
+<link rel="stylesheet" type="text/css" href="newuser.css">
+</head>
+<body background="image/kinniku.jpg">
+
+<script type="text/javascript">
+function name_check() {
+usernames = document.getElementById('username').value;
+if(usernames.length > 0) {
+if(usernames.length < 16) {
+if(usernames.match(/<*>/)) {
+ret = false;
+alert("HTMLのタグは使えません");
+} else {
+ret = true;
+}
+} else {
+ret = false;
+alert("ユーザー名は15文字以内です");
+}
+} else {
+ret = false;
+alert("ユーザー名を入力してください");
+}
+return ret;
+}
+</script>
+
+<h1 id="heading02">新規登録</h1>
+<div id="center02">
+<div class="inner">
+<form action="user_update.rb" method="post" onSubmit="return name_check()">
+<h2>登録したいユーザー名を<br>入力してください</h2>
+<br><input type="text" placeholder="Username" name="username" id="username">
+<input type="submit" value="決定">
+</form>
+<br><p>※ユーザー名は1文字以上15文字以内です</p>
+<br><a href="index.rb">ログインページに戻る</a>
+<div>
+<div>
+</body>
+</html>

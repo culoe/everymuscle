@@ -1,0 +1,48 @@
+<%# encoding:utf-8 %>
+<%
+require 'cgi'
+cgi = CGI.new
+require 'sqlite3'
+print cgi.header("text/html; charset=utf-8")
+myuser = cgi["username"]
+registed_count = Array.new
+
+db = SQLite3::Database.new("every_muscle.db")
+db.transaction(){
+registed_count = db.execute("SELECT pushups, abs, back, squat, barbie FROM user inner join count on user.id = count.countid WHERE user.name = \"daiki\"")
+}
+db.close
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ユーザーページ</title>
+</head>
+<body>
+<form action="count.rb" method="post">
+<h1>ようこそ<%= myuser %>さん</h1>
+<p>腕立て：<input type="number" name="count_pushups" id="count_pushups"></p>
+<p>腹筋：<input type="number" name="count_abs" id="count_abs"></p>
+<p>背筋：<input type="number" name="count_back" id="count_back"></p>
+<p>スクワット：<input type="number" name="count_squat" id="count_squat"></p>
+<p>バービージャンプ：<input type="number" name="count_barbie" id="count_barbie"></p>
+<p><input type="submit" value="決定">
+<input type="reset" value="クリア"></p>
+</form>
+<table border="1" cellspacint="0">
+<tr>
+<td>腕立て</td><td>腹筋</td><td>背筋</td><td>スクワット</td><td>バービージャンプ</td>
+</tr>
+<tr>
+<td><%= registed_count[0][0] %></td>
+<td><%= registed_count[0][1] %></td>
+<td><%= registed_count[0][2] %></td>
+<td><%= registed_count[0][3] %></td>
+<td><%= registed_count[0][4] %></td>
+</tr>
+</table>
+<a href="index.rb">ログインページに戻る</a>
+</body>
+</html>

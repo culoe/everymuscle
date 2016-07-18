@@ -1,0 +1,135 @@
+/* ゴールテープ */
+
+#heading02{
+    position:relative;
+    margin:30px auto 0px;
+    font:bold 30px/1.6 Arial, Helvetica, sans-serif;
+    text-align:center;
+    color:#333;
+    background:#f0e800;
+    -webkit-transform: rotate(-3deg) skew(-3deg);
+    -moz-transform: rotate(-3deg) skew(-3deg);
+    -o-transform: rotate(-3deg) skew(-3deg);
+    -ms-transform: rotate(-3deg) skew(-3deg);
+    transform: rotate(-3deg) skew(-3deg);
+    text-shadow:1px 1px 0 rgba(255,255,255,1);
+    box-shadow:0 1px 2px 0 rgba(0,0,0,0.2),
+    30px 0 0 0 #f0e800,
+    -30px 0 0 0 #f0e800;
+}
+
+/* ページ設定 */
+
+/** {
+    margin:0;
+    padding:0;
+}*/
+
+ul {
+    list-style:none;
+}
+
+br {
+    letter-spacing:0;
+}
+
+img {
+    max-width:100%;
+    height:auto;
+    border:none;
+    vertical-align:top;
+}
+
+/* clearfix */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    font-size:0;
+    clear: both;
+    visibility:hidden;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+/* Hides from IE Mac \*/
+* html .clearfix {height: 1%;}
+.clearfix{display:block;}
+/* End Hack */
+
+/* =====================
+コンテンツ
+======================= */
+#contents > div {
+    margin-bottom:2em;
+}
+
+#center01 {
+    text-align:center;
+}
+
+#center01 p {
+    margin-bottom:1em;
+}
+
+/* タブ */
+h3{
+    color: #111;
+    font-size: 1.143em;
+    font-weight: bold;
+    margin: 0 0 0.2em;
+    border-bottom: 2px solid #B92A2C;
+    box-shadow: 0 1px 0 #aaaaaa;
+    -webkit-box-shadow: 0 1px 0 #aaaaaa;
+    -moz-box-shadow: 0 1px 0 #aaaaaa;
+    text-shadow: #999999 0px 1px 1px;
+}
+ 
+h3{
+    font-size:2.0em;
+}
+
+#center02 {
+    position:relative;
+    width:100%;
+    max-width:600px;
+    height:540px;
+    margin:50px auto 0px;
+    background:#fff;
+}
+
+#center02 .inner {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:50%;
+    margin:-15.3em 0 0 -23%;
+    text-align:center;
+}
+@media screen and (max-width: 620px){
+    #center04 li {
+	width:32%;
+	margin:0 0 1em 2%;
+	}
+    #center04 li:nth-child(4) {
+	margin-left:0;
+	}
+}
+
+@media screen and (max-width: 480px){
+    #center04 #social01 li {
+	width:49%;
+	margin:0 0 1em 1%;
+	}
+
+    #center04 #social01 li:nth-child(odd) {
+	margin-left:0;
+	}
+
+    #center04 #social01 li:nth-child(4) {
+	margin-left:1%;
+    }
+}

@@ -1,0 +1,10 @@
+registed_count = Array.new
+db = SQLite3::Database.new("every_muscle.db")
+db.transaction(){
+db.execute("SELECT pushups, abs, back, squat, barbie FROM user inner join count on user.id = count.cou\
+ntid WHERE user.name=\"#{username}\";")
+<td><%= registed_count[0] %></td>
+<td><%= registed_count[0] %></td>
+<td><%= registed_count[0] %></td>
+<td><%= registed_count[0] %></td>
+<td><%= registed_count[0] %></td>

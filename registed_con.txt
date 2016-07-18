@@ -1,0 +1,1 @@
+select * from user inner join count on user.id=count.countid;
